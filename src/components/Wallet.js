@@ -15,7 +15,7 @@ export class Wallet extends Component {
         <input
           className="input-amount"
           onChange={event => {
-            this.setState({ amount: parseInt(event.target.value) });
+            this.setState({ amount: parseInt(event.target.value, 10) });
           }}
         />
         <button
@@ -37,7 +37,7 @@ export class Wallet extends Component {
 
 export default connect(
   state => {
-    return { balance: state };
+    return { balance: state.balance };
   },
   { deposit, withdraw }
 )(Wallet);

@@ -18,7 +18,7 @@ const balanceReducer = (state = 0, action) => {
       bake_cookie(COOKIE_KEY, balance);
       break;
     default:
-      balance = parseInt(read_cookie(COOKIE_KEY)) || state;
+      balance = parseInt(read_cookie(COOKIE_KEY), 10) || state;
   }
   return balance;
 };
